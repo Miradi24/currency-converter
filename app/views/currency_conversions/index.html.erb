@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Currency conversions" %>
+
+<h1>Currency conversions</h1>
+
+<div id="currency_conversions">
+  <% @currency_conversions.each do |currency_conversion| %>
+    <%= render currency_conversion %>
+    <p>
+      <%= link_to "Show this currency conversion", currency_conversion %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New currency conversion", new_currency_conversion_path %>

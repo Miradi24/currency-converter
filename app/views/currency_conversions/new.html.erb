@@ -1,0 +1,11 @@
+<% content_for :title, "New currency conversion" %>
+
+<h1>New currency conversion</h1>
+
+<%= render "form", currency_conversion: @currency_conversion %>
+
+<br>
+
+<div>
+  <%= link_to "Back to currency conversions", currency_conversions_path %>
+</div>

@@ -1,0 +1,12 @@
+<% content_for :title, "Editing currency conversion" %>
+
+<h1>Editing currency conversion</h1>
+
+<%= render "form", currency_conversion: @currency_conversion %>
+
+<br>
+
+<div>
+  <%= link_to "Show this currency conversion", @currency_conversion %> |
+  <%= link_to "Back to currency conversions", currency_conversions_path %>
+</div>

@@ -25,7 +25,11 @@ class CurrencyConversionsController < ApplicationController
 
   # POST /currency_conversions or /currency_conversions.json
   def create
+    # Calculate conversion amount
+    conversion_amount = convert(currency_conversion_params[:amount], currency_conversion_params[:from], currency_conversion_params[:to])
+
     @currency_conversion = CurrencyConversion.new(currency_conversion_params)
+    @currency_conversion.conversion_amount = conversion_amount
 
     respond_to do |format|
       if @currency_conversion.save

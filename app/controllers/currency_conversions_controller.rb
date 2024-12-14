@@ -21,6 +21,9 @@ class CurrencyConversionsController < ApplicationController
 
   # GET /currency_conversions/1/edit
   def edit
+     @currencies = get_currencies
+     @selected_from_currency = @currency_conversion.from
+     @selected_to_currency = @currency_conversion.to
   end
 
   # POST /currency_conversions or /currency_conversions.json
@@ -44,8 +47,9 @@ class CurrencyConversionsController < ApplicationController
 
   # PATCH/PUT /currency_conversions/1 or /currency_conversions/1.json
   def update
+    conversion_amount = convert(currency_conversion_params[:amount], currency_conversion_params[:from], currency_conversion_params[:to])
     respond_to do |format|
-      if @currency_conversion.update(currency_conversion_params)
+      if @currency_conversion.update(currency_conversion_params.merge(conversion_amount: conversion_amount))
         format.html { redirect_to @currency_conversion, notice: "Currency conversion was successfully updated." }
         format.json { render :show, status: :ok, location: @currency_conversion }
       else

@@ -2,7 +2,26 @@
 
 <h1>Editing currency conversion</h1>
 
-<%= render "form", currency_conversion: @currency_conversion %>
+<%= form_with model: @currency_conversion, local: true do |form| %>
+  <div>
+    <%= form.label :amount, "Amount" %><br>
+    <%= form.number_field :amount, step: 0.01, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :from, "From Currency" %><br>
+    <%= form.select :from, options_for_select(@currencies, @selected_from_currency), {}, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :to, "To Currency" %><br>
+    <%= form.select :to, options_for_select(@currencies, @selected_to_currency), {}, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit "Update conversion", class: "btn btn-primary" %>
+  </div>
+<% end %>
 
 <br>
 

@@ -1,11 +1,30 @@
-<% content_for :title, "New currency conversion" %>
+<% content_for :title, "New Currency Conversion" %>
 
-<h1>New currency conversion</h1>
+<h1>New Currency Conversion</h1>
 
-<%= render "form", currency_conversion: @currency_conversion %>
+<%= form_with model: @currency_conversion, local: true do |form| %>
+  <div>
+    <%= form.label :amount, "Amount" %><br>
+    <%= form.number_field :amount, step: 0.01, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :from, "From Currency" %><br>
+    <%= form.select :from, options_for_select(@currencies), {}, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :to, "To Currency" %><br>
+    <%= form.select :to, options_for_select(@currencies), {}, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit "Convert", class: "btn btn-primary" %>
+  </div>
+<% end %>
 
 <br>
 
 <div>
-  <%= link_to "Back to currency conversions", currency_conversions_path %>
+  <%= link_to "Back to Currency Conversions", currency_conversions_path, class: "btn btn-secondary" %>
 </div>

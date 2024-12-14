@@ -1,4 +1,8 @@
+require "money"
+require_dependency "currency_converter"
+
 class CurrencyConversionsController < ApplicationController
+  include CurrencyConverter
   before_action :set_currency_conversion, only: %i[ show edit update destroy ]
 
   # GET /currency_conversions or /currency_conversions.json
@@ -13,6 +17,7 @@ class CurrencyConversionsController < ApplicationController
   # GET /currency_conversions/new
   def new
     @currency_conversion = CurrencyConversion.new
+    @currencies = get_currencies
   end
 
   # GET /currency_conversions/1/edit

@@ -1,4 +1,3 @@
-require "money"
 require_dependency "currency_converter"
 
 class CurrencyConversionsController < ApplicationController

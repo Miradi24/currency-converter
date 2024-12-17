@@ -5,7 +5,7 @@
 <%= form_with model: @currency_conversion, local: true do |form| %>
   <%= render "form_fields", form: form %>
   <div>
-    <%= form.submit "Update conversion", class: "btn btn-primary" %>
+    <%= form.submit "Update conversion", class: "btn btn-primary mt-3" %>
   </div>
 <% end %>
 
@@ -13,5 +13,5 @@
 
 <div>
   <%= link_to "Show this currency conversion", @currency_conversion %> |
-  <%= link_to "Back to currency conversions", currency_conversions_path %>
+  <%= link_to "Back to currency conversions", root_path %>
 </div>

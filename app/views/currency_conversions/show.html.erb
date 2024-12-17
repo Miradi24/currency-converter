@@ -4,7 +4,7 @@
 
 <div>
   <%= link_to "Edit this currency conversion", edit_currency_conversion_path(@currency_conversion) %> |
-  <%= link_to "Back to currency conversions", currency_conversions_path %>
+  <%= link_to "Back to currency conversions", all_currency_conversions_path %>
 
-  <%= button_to "Destroy this currency conversion", @currency_conversion, method: :delete %>
+  <%= button_to "Delete", @currency_conversion, method: :delete, class: 'mt-3 btn btn-danger' %>
 </div>

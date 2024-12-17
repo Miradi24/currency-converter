@@ -9,6 +9,11 @@ class CurrencyConversionsController < ApplicationController
     @currency_conversions = CurrencyConversion.all
   end
 
+  # GET /currency_conversions/all
+  def all
+    @currency_conversions = CurrencyConversion.all
+  end
+
   # GET /currency_conversions/1 or /currency_conversions/1.json
   def show
   end

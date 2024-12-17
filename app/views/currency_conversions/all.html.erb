@@ -1,8 +1,22 @@
-<div id="currency_conversions">
-  <% @currency_conversions.each do |currency_conversion| %>
-    <%= render currency_conversion %>
-    <p>
-      <%= link_to "Show this currency conversion", currency_conversion %>
-    </p>
-  <% end %>
+
+<div class="all-new">
+    <%= link_to "New currency conversion", root_path, class: "btn btn-success btn-lg" %>
+</div>
+
+<div id="currency_conversions" class="page-all">
+    <div class="all-currencies">
+    <% @currency_conversions.each do |currency_conversion| %>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body all-conversion">
+                <span class="card-title mb-2"><b>Amount:</b> <%= currency_conversion.amount %></span>
+                <span class="card-title mb-2"><b>From Currency:</b> <%= currency_conversion.from %></span>
+                <span class="card-title mb-2"><b>To Currency:</b>  <%= currency_conversion.to %></span>
+                <%= link_to "View", currency_conversion, class: 'btn btn-primary' %>
+            </div>
+        </div>
+        <p>
+        </p>
+    <% end %>
+
+    </div>
 </div>

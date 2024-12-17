@@ -15,9 +15,13 @@ body {
     flex-direction: column;
 }
 
-.hero {
+.wrapper-container {
     padding-left: 6rem;
     padding-right: 6rem;
+    width: 100%;
+}
+
+.hero {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -42,4 +46,26 @@ body {
 .hero-form-content {
     justify-content: center;
     align-items: center;
+}
+
+.page-all {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.all-conversion {
+    display: flex;
+    flex-direction: column;
+}
+
+.all-currencies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.all-new {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
 }

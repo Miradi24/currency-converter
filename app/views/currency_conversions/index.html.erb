@@ -1,16 +1,32 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Currency conversions" %>
+<% content_for :title, "Currency Converter" %>
 
-<h1>Currency conversions</h1>
+<div class="container-fluid hero">
+  <div class="text-center mb-5">
+    <h1 class="mb-4">Currency Converter</h1>
+    <p class="fs-5">Convert between multiple currencies in an <b class="text-success">instant!</b></p>
+  </div>
 
-<div id="currency_conversions">
-  <% @currency_conversions.each do |currency_conversion| %>
-    <%= render currency_conversion %>
-    <p>
-      <%= link_to "Show this currency conversion", currency_conversion %>
-    </p>
-  <% end %>
+  <%= form_with model: @currency_conversion, local: true, html: {class: "hero-form shadow-lg rounded" } do |form|%>
+    <div class="row w-full mb-5 hero-form-content">
+      <div class="col-2">
+        <%= form.label :amount, "Amount", class: "mb-3" %><br>
+        <%= form.number_field :amount, step: 0.01, class: "form-control", required: true %>
+      </div>
+
+      <div class="col-2">
+        <%= form.label :from, "From Currency", class: "mb-3" %><br>
+        <%= form.select :from, options_for_select(@currencies), {}, class: "form-control" %>
+      </div>
+
+      <div class="col-2">
+        <%= form.label :to, "To Currency", class: "mb-3" %><br>
+        <%= form.select :to, options_for_select(@currencies), {}, class: "form-control" %>
+      </div>
+    </div>
+    <div>
+      <%= form.submit "Convert", class: "btn btn-primary btn-lg" %>
+    </div>
+<% end %>
 </div>
-
-<%= link_to "New currency conversion", new_currency_conversion_path %>

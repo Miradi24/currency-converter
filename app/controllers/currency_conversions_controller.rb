@@ -7,6 +7,8 @@ class CurrencyConversionsController < ApplicationController
   # GET /currency_conversions or /currency_conversions.json
   def index
     @currency_conversions = CurrencyConversion.all
+    @currency_conversion = CurrencyConversion.new
+    @currencies = get_currencies
   end
 
   # GET /currency_conversions/all

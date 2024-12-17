@@ -8,3 +8,38 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.hero-form {
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero-form-content {
+    justify-content: center;
+    align-items: center;
+}

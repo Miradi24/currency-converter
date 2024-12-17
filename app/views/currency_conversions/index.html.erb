@@ -10,20 +10,7 @@
 
   <%= form_with model: @currency_conversion, local: true, html: {class: "hero-form shadow-lg rounded" } do |form|%>
     <div class="row w-full mb-5 hero-form-content">
-      <div class="col-2">
-        <%= form.label :amount, "Amount", class: "mb-3" %><br>
-        <%= form.number_field :amount, step: 0.01, class: "form-control", required: true %>
-      </div>
-
-      <div class="col-2">
-        <%= form.label :from, "From Currency", class: "mb-3" %><br>
-        <%= form.select :from, options_for_select(@currencies), {}, class: "form-control" %>
-      </div>
-
-      <div class="col-2">
-        <%= form.label :to, "To Currency", class: "mb-3" %><br>
-        <%= form.select :to, options_for_select(@currencies), {}, class: "form-control" %>
-      </div>
+      <%= render "form_fields", form: form %>
     </div>
     <div>
       <%= form.submit "Convert", class: "btn btn-primary btn-lg" %>

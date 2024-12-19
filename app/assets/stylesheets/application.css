@@ -69,3 +69,13 @@ body {
     display: flex;
     justify-content: center;
 }
+
+@media screen and (max-width: 1080px) {
+    .hero-form-content {
+        flex-direction: column;
+    }
+
+    .hero-form-content div {
+        width: 100%;
+    }
+}

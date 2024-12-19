@@ -78,4 +78,14 @@ body {
     .hero-form-content div {
         width: 100%;
     }
+
+    .wrapper-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .page-all {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
